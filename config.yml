@@ -1,0 +1,52 @@
+settings:
+  config:
+    # Med dette aktiverte alle som er satt som op, har full tillatelser når man administrerer GroupManager
+    # Brukeren vil kunne markedsføre spillere til samme gruppe eller til og med over.
+    opOverrides: true
+    
+    # Standardinnstilling for 'mantogglevalidate'
+    # True vil føre til at GroupManager prøver å søke navnevaluering som standard.
+    validate_toggle: true
+    # ************************************************************************************************************************************************************
+    # *** NOTE: Å ha denne funksjonen aktivert, kan tillate feil bruk av kommandoblokker som kan føre til uønskede tillatelsesendringer. Du har blitt advart! ***
+    # ************************************************************************************************************************************************************
+    allow_commandblocks: true
+    
+  data:
+    save:
+      # How often GroupManager will save it's data back to groups.yml and users.yml
+      minutes: 10
+      # Number of hours to retain backups (plugins/GroupManager/backup)
+      hours: 24
+      
+  logging:
+    # Level of detail GroupManager will use when logging.
+    # Acceptable entries are - ALL,CONFIG,FINE,FINER,FINEST,INFO,OFF,SEVERE,WARNING
+    level: INFO
+    
+  mirrors:
+        # Worlds listed here have their settings mirrored in their children.
+        # The first element 'world' is the main worlds name, and is the parent world.
+        # subsequent elements 'world_nether' and 'world_the_end' are worlds which will use
+        # the same user/groups files as the parent.
+        # the element 'all_unnamed_worlds' specifies all worlds that aren't listed, and automatically mirrors them to it's parent.
+        # Each child world can be configured to mirror the 'groups', 'users' or both files from its parent.
+        world:
+          world_nether:
+          - users
+          - groups
+          world_the_end:
+          - users
+          - groups
+          all_unnamed_worlds:
+          - users
+          - groups
+    #  world2:      (World2 would have it's own set of user and groups files)
+    #    world3:
+    #    - users    (World3 would use the users.yml from world2, but it's own groups.yml)
+    #    world4:
+    #    - groups   (World4 would use the groups.yml from world2, but it's own users.yml)
+    #  world5:
+    #    - world6   (this would cause world6 to mirror both files from world5)
+
+#   © Ninjacob / TeamEngen 2017

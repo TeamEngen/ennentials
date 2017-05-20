@@ -1,0 +1,13 @@
+# "For et mer avansert konfigurasjonseksempel som bruker de avanserte funksjonene i GroupManager, gå til http://pastebin.com/a8ZA0j5G"
+users:
+  NinjacobYT:
+    group: Developer
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  Steve:
+    group: Spiller
+    subgroups: []
+    permissions:
+
+#   © Ninjacob / TeamEngen 2017

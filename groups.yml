@@ -1,0 +1,168 @@
+# Gruppearv
+#
+# Enhver arvet gruppe prefiks med en g: er globale grupper
+# Og er arvet fra GlobalGroups.yml.
+#
+# Grupper uten g: prefiks er grupper lokal for denne verdenen
+# Og er definert i denne group.yml-filen.
+#
+# Lokale gruppearv definerer kampanjetreet ditt når du bruker 'manpromote / mandemote'
+groups:
+  Default:
+    default: true
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    - g:groupmanager_default
+    - g:bukkit_default
+    - g:essentials_default
+    - g:towny_default
+    info:
+      prefix: '&e'
+      build: false
+      suffix: ''
+  Bygger:
+    default: false
+    permissions: []
+    inheritance:
+    - default
+    - g:essentials_builder
+    - g:towny_builder
+    info:
+      prefix: '&7[&aBygger&7]'
+      build: true
+      suffix: ''
+  Mod:
+    default: false
+    permissions: []
+    inheritance:
+    - builder
+    - g:groupmanager_moderator
+    - g:bukkit_moderator
+    - g:essentials_moderator
+    - g:towny_moderator
+    - g:vanish_moderator
+    info:
+      prefix: '&7[&6Moderator&7]'
+      build: true
+      suffix: ''
+  Seer:
+# dette gir deg bare en kul prefix
+    default: false
+    permissions: []
+    inheritance:
+    - g:essentials_default
+    info:
+      prefix: '&7[&bSeer&7]'
+      build: true
+      suffix: ''
+  Admin:
+    default: false
+    permissions: []
+    inheritance:
+    - moderator
+    - g:groupmanager_admin
+    - g:bukkit_admin
+    - g:essentials_admin
+    - g:towny_admin
+    - g:vanish_admin
+    info:
+      prefix: '&7[&4ADMIN&7]'
+      build: true
+      suffix: ''
+  Eier:
+    default: false
+    permissions:
+    - '*'
+    - -vanish.effects.*
+    - +vanish.effects.toggle.all
+    inheritance:
+    - admin
+    - g:groupmanager_moderator
+    - g:groupmanager_admin
+    - g:bukkit_default
+    - g:bukkit_moderator
+    - g:bukkit_admin
+    - g:essentials_default
+    - g:essentials_builder
+    - g:essentials_moderator
+    - g:essentials_admin
+    - g:towny_default
+    - g:towny_builder
+    - g:towny_moderator
+    - g:towny_admin
+    - g:vanish_moderator
+    - g:vanish_admin
+    info:
+      prefix: '&7[&l&eEier&7]'
+      build: true
+      suffix: ''
+  Operator:
+    default: false
+    permissions: []
+    inheritance:
+    - builder
+    - g:groupmanager_moderator
+    - g:bukkit_moderator
+    - g:essentials_moderator
+    - g:towny_moderator
+    - g:vanish_moderator
+    - Admin
+    info:
+      prefix: '&7[&5Operator&7]'
+      build: true
+      suffix: ''
+   OP-Admin:
+    default: false
+    permissions: []
+    inheritance:
+    - Admin
+    - g:groupmanager_admin
+    - g:bukkit_admin
+    - g:essentials_admin
+    - g:towny_admin
+    - g:vanish_admin
+    info:
+      prefix: '&7[&aOP&f-&4ADMIN&7]'
+      build: true
+      suffix: ''
+   VIP:
+    default: false
+    permissions: []
+    inheritance:
+    - Hero
+    info:
+      prefix: '&7[&aV&4I&eP&7]'
+      build: true
+      suffix: ''
+   Hero:
+    default: false
+    permissions: []
+    inheritance:
+    - spiller
+    info:
+      prefix: '&7[&bHero&7]'
+      build: true
+      suffix: ''
+   Spiller:
+    default: true
+    permissions: []
+    inheritance:
+    - g:essentials_default
+    - g:towny_default
+    info:
+      prefix: 'Spiller'
+      build: false
+      suffix: ''
+   Developer:
+    default: false
+    permissions: []
+    inheritance:
+    - g:essentials_default
+    - g:towny_default
+    info:
+      prefix: '&7[&aDev&beloper&7]'
+      build: true
+      suffix: ''
+      
+#   © Ninjacob / TeamEngen 2017
